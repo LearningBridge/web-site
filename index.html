@@ -1,0 +1,1807 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.1">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Hiragino Sans'}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+    span.s1 {font: 12.0px 'Hiragino Sans'}
+    span.s2 {font: 12.0px Helvetica}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="ja"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Learning Bridge<span class="s1">｜学びを、人生の</span>"<span class="s1">羅針盤</span>"<span class="s1">に！！</span>&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Google Fonts: UD<span class="s1">デジタル教科書体</span> N-R <span class="s1">はローカル環境に依存するため、一般的なフォントを設定</span> --&gt;&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>* {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-sizing: border-box;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>/* </span>フォント設定を修正（<span class="s2">UD</span>デジタル教科書体は一般的なブラウザでは表示されないため、フォールバックを調整）<span class="s2"> */</span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Hiragino Maru Gothic Pro', '<span class="s1">ヒラギノ丸ゴ</span> Pro', 'Yu Gothic UI', '<span class="s1">メイリオ</span>', 'Meiryo', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.9;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #333;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>overflow-x: hidden;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #f8f9fa;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* <span class="s1">ヘッダー</span> */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>header {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #1b6895; /* <span class="s1">新しい背景色に変更</span> */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 1.2rem 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: fixed;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>top: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>z-index: 1000;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 4px 20px rgba(0,0,0,0.15);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: all 0.3s;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>nav {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 1200px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 auto;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: space-between;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 0 2rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* <span class="s1">ロゴ画像スタイル</span> */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.logo-image {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 40px; /* <span class="s1">ロゴの高さ調整</span> */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>vertical-align: middle; /* <span class="s1">画像と他の要素のベースラインを合わせる</span> */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* <span class="s1">ハンバーガーメニュー</span> */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.hamburger {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 35px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 30px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex-direction: column;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: space-around;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>z-index: 1001;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.hamburger span {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 3px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: all 0.3s;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 3px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.hamburger.active span:nth-child(1) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: rotate(45deg) translate(8px, 8px);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.hamburger.active span:nth-child(2) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>opacity: 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.hamburger.active span:nth-child(3) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: rotate(-45deg) translate(8px, -8px);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* <span class="s1">サイドメニュー</span> */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.side-menu {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: fixed;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>top: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>right: -350px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 350px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 100vh;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(180deg, #0ea5e9 0%, #3b82f6 100%);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 100px 2rem 2rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: right 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>z-index: 999;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: -5px 0 30px rgba(0,0,0,0.3);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.side-menu.active {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>right: 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.side-menu ul {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>list-style: none;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.side-menu li {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 2rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: translateX(50px);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>opacity: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: all 0.3s;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.side-menu.active li {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: translateX(0);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>opacity: 1;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>/* </span>トップページリンク削除後の遅延を調整<span class="s2"> */</span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.side-menu.active li:nth-child(1) { transition-delay: 0.1s; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.side-menu.active li:nth-child(2) { transition-delay: 0.2s; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.side-menu.active li:nth-child(3) { transition-delay: 0.3s; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.side-menu.active li:nth-child(4) { transition-delay: 0.4s; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* .side-menu.active li:nth-child(5) { transition-delay: 0.5s; } */ /* <span class="s1">トップページ削除のため不要に</span> */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.side-menu a {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-decoration: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.3rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: all 0.3s;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.side-menu a:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: rgba(255,255,255,0.2);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: translateX(10px);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* <span class="s1">オーバーレイ</span> */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.overlay {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: fixed;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>top: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>left: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: rgba(0,0,0,0.5);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>opacity: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>visibility: hidden;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: all 0.3s;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>z-index: 998;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.overlay.active {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>opacity: 1;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>visibility: visible;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* <span class="s1">ページコンテナ</span> */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.page {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>min-height: 100vh;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding-top: 80px; /* <span class="s1">ヘッダーの高さ分確保</span> */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.page.active {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: block;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* <span class="s1">トップページ</span> - <span class="s1">ヒーロー</span> */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.hero {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(135deg, #0ea5e9 0%, #3b82f6 100%);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 120px 2rem 100px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>overflow: hidden;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.hero::before {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>content: '';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>top: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>left: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>right: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>bottom: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.15) 0%, transparent 60%);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.hero-content {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>z-index: 1;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 900px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 auto;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.hero h1 {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 3.8rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 2rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>animation: fadeInUp 1s;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.4;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>/* H1<span class="s1">をレスポンシブに調整</span> */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: clamp(2rem, 5vw, 3.8rem);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>white-space: nowrap; /* <span class="s1">強制的に一行表示</span> */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.hero .subtitle {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.4rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 2.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>opacity: 0.95;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>animation: fadeInUp 1s 0.2s both;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.8;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* ---------------------------------</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>1. CTA</span>ボタン統一デザイン<span class="s2"> (</span>白背景・青文字・青枠線<span class="s2">)</span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>--------------------------------- */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.cta-buttons {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 1.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>animation: fadeInUp 1s 0.3s both;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex-wrap: wrap;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.cta-button {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #0ea5e9;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 1.2rem 3rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 2px solid #0ea5e9; /* <span class="s1">青い枠線を追加</span> */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 50px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: all 0.3s;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* <span class="s1">影を調整</span> */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-decoration: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: inline-block;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: inherit; /* <span class="s1">フォントを親要素から継承</span> */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center; /* <span class="s1">ボタン内のテキストを中央揃えに</span> */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.cta-button:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: translateY(-5px);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 15px 40px rgba(0,0,0,0.2);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #e0f2fe; /* <span class="s1">ホバー時の背景色を薄い青に</span> */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p3"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* <span class="s1">セクション共通</span> */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>section {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 1200px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 auto;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 5rem 2rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* ---------------------------------</p>
+<p class="p1"><span class="Apple-converted-space">        </span>2. H2<span class="s1">タイトルの色統一</span> (#13538a)</p>
+<p class="p1"><span class="Apple-converted-space">        </span>--------------------------------- */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>h2 {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 2.8rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 3rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #13538a; /* <span class="s1">濃い青に変更</span> */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding-bottom: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.5;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>h2::after {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>content: '';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>bottom: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>left: 50%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: translateX(-50%);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 4px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(90deg, #13538a, #3b82f6); /* <span class="s1">濃い青を基調としたグラデーション</span> */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 2px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* ---------------------------------</p>
+<p class="p1"><span class="Apple-converted-space">        </span>3. <span class="s1">セクション背景色のクラス定義</span> (#FAFAFA <span class="s1">と</span> #F8FBFF)</p>
+<p class="p1"><span class="Apple-converted-space">        </span>--------------------------------- */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.bg-fa {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #FAFAFA;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.bg-f8 {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #F8FBFF;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p3"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Learning Bridge<span class="s1">とは</span> */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.about-content {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 900px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 auto;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.about-text {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.15rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>line-height: 2.2;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #475569;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 2rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: left;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.about-text strong {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #0ea5e9;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.section-button {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 3rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* <span class="s1">セクション２内の画像スタイル</span> */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.about-image {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: block;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: auto;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 1.5rem auto 3rem; /* <span class="s1">上下マージンを調整</span> */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 5px 15px rgba(0,0,0,0.1);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* 3<span class="s1">つの軸</span> */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.values-list {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 800px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 auto;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.value-item {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); /* <span class="s1">内部要素の色は保持</span> */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 2.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 2rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-left: 5px solid #0ea5e9;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: transform 0.3s;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.value-item:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: translateX(10px);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.value-number {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #0ea5e9;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.8rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.value-title {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.6rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #1e293b;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.value-text {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #475569;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>line-height: 2;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.values-footer {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.3rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #0ea5e9;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 3rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.8;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* <span class="s1">サービス</span> */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.service-item {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 3rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 3rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 10px 30px rgba(0,0,0,0.08);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-left: 5px solid #0ea5e9;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.service-item:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 15px 40px rgba(14,165,233,0.15);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.service-grid {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: grid;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>grid-template-columns: 1fr; /* <span class="s1">絵文字削除に伴い</span>1<span class="s1">カラムに</span> */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 2rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.service-content h3 {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.8rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #0ea5e9;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 0.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.service-subtitle {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.2rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #64748b;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 1.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.service-description {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>line-height: 2;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #475569;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 1.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.service-features h4 {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.2rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #0ea5e9;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.service-features ul {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>list-style: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.service-features li {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 0.5rem 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #475569;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: start;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 0.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.05rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.8;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.service-features li::before {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>content: '●';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #0ea5e9;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex-shrink: 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* .service-icon { <span class="s1">絵文字削除のため不要に</span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 8rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>} */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.achievement-box {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 2.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 2rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 3px solid #0ea5e9;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.achievement-title {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.4rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #0ea5e9;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.achievement-text {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>line-height: 2;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #475569;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 1.5rem; /* <span class="s1">画像との間にマージン</span> */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.achievement-image {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: block; /* <span class="s1">画像をブロック要素に</span> */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: auto; /* <span class="s1">高さは自動調整</span> */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 15px; /* <span class="s1">角丸</span> */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 1.5rem auto 0; /* <span class="s1">上マージンと中央寄せ</span> */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 5px 15px rgba(0,0,0,0.1);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* <span class="s1">相談の流れ</span> */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.flow-list {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 800px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 auto;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.flow-item {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 2.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 2rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding-left: 5rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.flow-number {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>left: 2rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>top: 50%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: translateY(-50%);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 50px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 50px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(135deg, #0ea5e9, #3b82f6);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 50%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.flow-title {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #1e293b;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.flow-text {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #475569;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>line-height: 2;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.flow-footer {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.3rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #0ea5e9;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 3rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.8;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* <span class="s1">お問い合わせセクション</span> */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.contact-section {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(135deg, #0ea5e9 0%, #3b82f6 100%);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>/* </span>濃い背景色のため、<span class="s2">h2</span>タイトルは白を維持<span class="s2"> */</span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.contact-section h2 {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.contact-section h2::after {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: white;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.contact-content {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 800px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 auto;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.contact-text {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.2rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>line-height: 2.2;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 2rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.contact-note {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.15rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>line-height: 2;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 3rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* <span class="s1">サービスページ</span> - <span class="s1">学生の声セクション</span> */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.voice-section {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>/* padding<span class="s1">は</span>section<span class="s1">に設定されているため不要</span> */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.voice-box {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 2.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 2rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 5px 15px rgba(0,0,0,0.08);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-left: 5px solid #0ea5e9;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.voice-content {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.05rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>line-height: 2;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #475569;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.voice-name {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.2rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #13538a;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: right;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* <span class="s1">会社概要ページ</span>, <span class="s1">パートナー一覧の</span>Hero */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.company-hero, .partners-hero {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(135deg, #0ea5e9 0%, #3b82f6 100%);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 100px 2rem 80px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.company-hero h1, .partners-hero h1 {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 3rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.philosophy-box {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 800px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 auto;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.philosophy-title {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.6rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #64748b;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.philosophy-text {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 2.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #0ea5e9;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.6;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.mission-section, .vision-section {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 5rem 2rem; /* <span class="s1">セクションのパディングを追加</span> */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.mission-box, .vision-box {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 800px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 auto;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(135deg, #0ea5e9 0%, #3b82f6 100%);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 3rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 10px 30px rgba(0,0,0,0.2);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.mission-title, .vision-title {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.6rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>opacity: 0.95;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.mission-text, .vision-text {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>line-height: 2;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* <span class="s1">代表メッセージ</span> */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.message-grid {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: grid;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>grid-template-columns: 300px 1fr;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 3rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: start;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.message-profile {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 2rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 10px 30px rgba(0,0,0,0.08);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* <span class="s1">画像が挿入される</span> div <span class="s1">のスタイルを調整</span> */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.profile-image {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 200px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 200px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: none; /* <span class="s1">枠線削除</span> */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 20px; /* <span class="s1">角丸四角形に変更</span> */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 auto 1.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>overflow: hidden; /* <span class="s1">画像をはみ出させない</span> */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.profile-image img {</p>
+<p class="p1"><span class="Apple-converted-space">             </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">             </span>height: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">             </span>object-fit: cover;</p>
+<p class="p1"><span class="Apple-converted-space">             </span>border-radius: 20px; /* <span class="s1">角丸四角形に変更</span> */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.profile-name {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #1e293b;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.social-links {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* SNS<span class="s1">リンクの画像スタイル</span> */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.social-link {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 40px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 40px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 50%; /* <span class="s1">丸形にクリップ</span> */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>overflow: hidden; /* <span class="s1">画像をはみ出させない</span> */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex; /* flexbox<span class="s1">で中央寄せ</span> */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: transform 0.3s;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-decoration: none; /* <span class="s1">テキストの下線削除</span> */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p3"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.social-link img {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>object-fit: cover; /* <span class="s1">画像がはみ出さないように調整</span> */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 50%; /* <span class="s1">親要素が丸形なのでこちらも丸く</span> */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p3"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.social-link:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: scale(1.1);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p3"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.message-content {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 3rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 10px 30px rgba(0,0,0,0.08);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.message-opening {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.6rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #0ea5e9;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 2rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.8;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.message-text {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>line-height: 2.2;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #475569;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 1.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.message-text strong {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #0ea5e9;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* <span class="s1">会社情報</span> */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.info-table-container {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 900px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 auto;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 3rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 10px 40px rgba(0,0,0,0.1);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.info-table {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-collapse: collapse;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.info-table tr {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 1px solid #e2e8f0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.info-table th {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: left;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 1.5rem 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #0ea5e9;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 30%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>vertical-align: top;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.1rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.info-table td {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 1.5rem 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #475569;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.8;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.05rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* <span class="s1">サービスページ</span> */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.services-hero {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(135deg, #0ea5e9 0%, #3b82f6 100%);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 100px 2rem 80px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.services-hero h1 {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 3rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* <span class="s1">会員募集ページ</span> */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.membership-hero {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(135deg, #0ea5e9 0%, #3b82f6 100%);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 100px 2rem 80px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.membership-hero h1 {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 3rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.5;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.membership-intro {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 900px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 auto;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.membership-intro-text {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.2rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>line-height: 2.2;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #475569;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 2rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.membership-section {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 5rem 2rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.membership-content {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 900px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 auto;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.membership-text {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.15rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>line-height: 2.2;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #475569;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 2rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.benefit-list {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 2rem 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>/* </span>会員特典のボックスの背景色を白に統一<span class="s2"> */</span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.benefit-item {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: white; /* <span class="s1">変更</span> */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 2rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 1.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-left: 4px solid #0ea5e9;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: transform 0.3s;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 5px 15px rgba(0,0,0,0.05); /* <span class="s1">シャドウを追加</span> */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.benefit-item:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: translateY(-5px);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 10px 20px rgba(14,165,233,0.1);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.benefit-title {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.3rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #0ea5e9;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 0.8rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.benefit-text {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.05rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>line-height: 2;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #475569;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>/* </span>パートナー一覧セクションのスタイル<span class="s2"> */</span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.partner-list-container {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 3rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.partner-category h3 {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.8rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #13538a;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 1.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding-bottom: 0.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 2px solid #e0f2fe;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 3rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* <span class="s1">カード型表示のコンテナ</span> */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.partner-grid {</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>/* </span>将来のロゴ掲載時のためにレスポンシブな<span class="s2">4</span>カラムを定義<span class="s2"> */</span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: grid;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 1.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 2rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.partner-card {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 1.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 3px 10px rgba(0,0,0,0.05);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>min-height: 150px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex-direction: column;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.partner-card-logo {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 80%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-height: 80px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: auto;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>object-fit: contain;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 0.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.partner-card-name {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #13538a;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.5;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* <span class="s1">フッター</span> */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>footer {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #1b6895; /* <span class="s1">新しい背景色に変更</span> */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 3rem 2rem 2rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.footer-content {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 1200px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 auto;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: grid;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>grid-template-columns: 2fr 1fr 1fr;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 3rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.footer-about h3 {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.footer-links h4 {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #cbd5e1;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.footer-links ul {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>list-style: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 0; /* ul<span class="s1">のデフォルト</span>padding<span class="s1">を削除</span> */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0; /* ul<span class="s1">のデフォルト</span>margin<span class="s1">を削除</span> */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.footer-links li {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 0.5rem 0; /* li<span class="s1">にパディングを移動</span> */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.footer-links a {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #e0f2fe;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-decoration: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: color 0.3s;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: block; /* <span class="s1">リンクをブロック要素に</span> */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 0; /* a<span class="s1">タグ自体のパディングは不要に</span> */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.footer-links a:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.footer-bottom {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 2rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding-top: 2rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-top: 1px solid rgba(255,255,255,0.2);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #cbd5e1;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* <span class="s1">レスポンシブ</span> */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>@media (max-width: 768px) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.hero {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>padding: 100px 1.5rem 80px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.hero h1 {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>font-size: clamp(1.5rem, 5vw, 2.2rem); /* <span class="s1">スマホでの最小サイズを調整</span> */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.hero .subtitle {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>font-size: 1.1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.cta-buttons {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>flex-direction: column;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.cta-button {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>padding: 1rem 2rem;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>font-size: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>h2 {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>font-size: 1.8rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>section {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>padding: 3rem 1.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.footer-content {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>grid-template-columns: 1fr;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>gap: 2rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.side-menu {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>width: 80%; /* <span class="s1">スマホで見やすい幅に変更</span> */</p>
+<p class="p1"><span class="Apple-converted-space">                </span>right: -80%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.side-menu.active {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>right: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.services-hero h1,</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.news-hero h1,</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.membership-hero h1,</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.company-hero h1 {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>font-size: 2rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.info-table tr {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>border-bottom: none; /* <span class="s1">スマホで縦に並ぶため線を消去</span> */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.info-table th,</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.info-table td {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>display: block;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>padding: 0.5rem 0; /* <span class="s1">パディング調整</span> */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.info-table th {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>padding-top: 1.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>padding-bottom: 0.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>border-bottom: 1px solid #e2e8f0; /* <span class="s1">見出しの下に線を追加</span> */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.info-table td {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>padding-top: 0.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>padding-bottom: 1.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>border-bottom: 1px solid #e2e8f0; /* <span class="s1">内容の下に線を追加</span> */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.info-table tr:last-child td {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>border-bottom: none; /* <span class="s1">最後の要素の線は消す</span> */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p3"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>.service-grid {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>grid-template-columns: 1fr;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>/* .service-icon { <span class="s1">絵文字削除のため不要に</span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>font-size: 5rem;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>margin-top: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.message-grid {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>grid-template-columns: 1fr;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.flow-item {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>padding-left: 2rem;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>padding-top: 4rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.flow-number {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>left: 50%;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>top: 2rem;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>transform: translateX(-50%);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.about-text {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>font-size: 1.05rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.philosophy-text {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>font-size: 1.8rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.mission-text, .vision-text {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>font-size: 1.2rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.message-opening {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>font-size: 1.3rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.message-text {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>font-size: 1.05rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.message-profile {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>order: 2; /* <span class="s1">スマホでメッセージが先に表示されるように調整</span> */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.message-content {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>order: 1;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.footer-links li:first-child { /* <span class="s1">お問い合わせボタンの</span>li<span class="s1">要素</span> */</p>
+<p class="p1"><span class="Apple-converted-space">                </span>display: block; /* <span class="s1">中央揃えのため</span>display<span class="s1">をリセット</span> */</p>
+<p class="p1"><span class="Apple-converted-space">                </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.footer-links li:last-child { /* <span class="s1">メールアドレスの</span>li<span class="s1">要素</span> */</p>
+<p class="p1"><span class="Apple-converted-space">                </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.partner-grid {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- <span class="s1">ヘッダー</span> --&gt;&lt;header&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;nav&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- LearningBridge<span class="s1">ロゴ画像を挿入し、トップページへのリンクを設定</span> --&gt;&lt;a href="#" onclick="showPage('home')" class="logo-link"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;img src="https://i.imgur.com/MCX6lbB.jpeg" alt="Learning Bridge<span class="s1">ロゴ</span>" class="logo-image"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- <span class="s1">ハンバーガーメニューアイコン</span> --&gt;&lt;div class="hamburger" onclick="toggleMenu()"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span&gt;&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span&gt;&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span&gt;&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/nav&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/header&gt;</p>
+<p class="p3"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- <span class="s1">サイドメニュー</span> --&gt;&lt;div class="side-menu"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- <span class="s1">「トップページ」リンクを削除</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;&lt;a href="#" onclick="showPage('company'); toggleMenu();"&gt;<span class="s1">会社概要</span>&lt;/a&gt;&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;&lt;a href="#" onclick="showPage('services'); toggleMenu();"&gt;<span class="s1">サービス</span>&lt;/a&gt;&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;&lt;a href="#" onclick="showPage('membership'); toggleMenu();"&gt;<span class="s1">賛助会員募集</span>&lt;/a&gt;&lt;/li&gt; &lt;!-- <span class="s1">変更</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;&lt;a href="#" onclick="showPage('news'); toggleMenu();"&gt;<span class="s1">お知らせ</span>&lt;/a&gt;&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p3"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- <span class="s1">オーバーレイ</span> (<span class="s1">メニューが開いている時に背景を暗くする</span>) --&gt;&lt;div class="overlay" onclick="toggleMenu()"&gt;&lt;/div&gt;</p>
+<p class="p3"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- <span class="s1">ページコンテンツのラッパー</span> --&gt;&lt;!-- <span class="s1">①トップページ</span> (<span class="s1">初期表示</span>) --&gt;&lt;div class="page active" id="home"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- <span class="s1">セクション</span>1<span class="s1">：ファーストビュー</span> --&gt;&lt;div class="hero"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="hero-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h1&gt;<span class="s1">学びを、人生の羅針盤に！！</span>&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="subtitle"&gt;<span class="s1">学生と教員、そして社会をつなぐ</span>——&lt;br&gt;<span class="s1">共に学び合い、挑戦できる教育の未来を創る</span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="cta-buttons"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button class="cta-button" onclick="showPage('membership')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span><span class="s1">賛助会員（共創パートナー）募集</span> &lt;!-- <span class="s1">変更</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- CTA<span class="s1">ボタンのデザインを統一</span> --&gt;&lt;a class="cta-button" href="https://docs.google.com/forms/d/e/1FAIpQLSfT027WJZyBzb6FulIPU-Rkz6tsgTvjTdcpyZiWTMYDm5NxXQ/viewform?usp=dialog" target="_blank"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span><span class="s1">お問い合わせ</span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p3"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- <span class="s1">セクション</span>2<span class="s1">：</span>Learning Bridge<span class="s1">とは</span> (bg-fa) --&gt;&lt;section class="about bg-fa"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2&gt;<span class="s1">共に、学びの</span>"<span class="s1">再構築</span>"<span class="s1">を</span>&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="about-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="about-text"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span><span class="s1">私たち</span>Learning Bridge<span class="s1">は、現代の教育を</span>"<span class="s1">再構築</span>"<span class="s1">することを目指す教育支援団体です。</span>&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span><span class="s1">（現在、「一般社団法人</span>Learning Bridge<span class="s1">」設立準備中）</span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="about-text"&gt;</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span></span>現在、学校現場では「生徒の主体性を育てたい」「もっと良い授業を届けたい」という想いを持つ教員の方々がたくさんいらっしゃいます。<span class="s2">&lt;br&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span></span>しかし、その一方で、限られた時間や環境の中で新たな学びの形を創造することは、容易ではありません。</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/p&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="about-text"&gt;</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span></span>そこで、私たちは、そんな教育現場に寄り添いながら、学生が自ら問いを立て、仲間と共に考え、行動へとつなげていける学びの形を学校・地域・社会と共に創り出していきたいと考えています。</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/p&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="about-text"&gt;</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span></span>そのために、<span class="s2">Learning Bridge</span>では、授業設計の伴走支援や探究学習のサポート、ワークショップやイベントの企画運営を通して、学生と教員、そして社会をつなぐ<span class="s2">"</span>学びの再構築<span class="s2">"</span>に取り組んでいます。</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/p&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- <span class="s1">活動実績の画像を会社概要ボタンの上に配置</span> (<span class="s1">位置を修正</span>) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;img src="https://i.imgur.com/lmOrwTJ.png" alt="<span class="s1">活動実績を示すグラフ画像</span>" class="about-image"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="section-button"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button class="cta-button" onclick="showPage('company')"&gt;<span class="s1">会社概要について</span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p3"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- <span class="s1">セクション</span>3<span class="s1">：</span>3<span class="s1">つの軸</span> (bg-f8) --&gt;&lt;section class="values bg-f8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2&gt;3<span class="s1">つの軸で描く「学びの未来」</span>&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="values-list"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="value-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="value-number"&gt;<span class="s1">①</span> <span class="s1">共創</span> ― <span class="s1">つながる力</span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="value-text"&gt;<span class="s1">教える者と学ぶ者が一体となり、学びを共に創る環境をデザインします。</span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="value-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="value-number"&gt;<span class="s1">②</span> <span class="s1">挑戦</span> ― <span class="s1">動かす力</span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="value-text"&gt;<span class="s1">失敗を恐れず、試行錯誤を重ねるプロセスそのものを価値として捉えます。</span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="value-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="value-number"&gt;<span class="s1">③</span> <span class="s1">信頼</span> ― <span class="s1">支える力</span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="value-text"&gt;<span class="s1">教育現場の努力に寄り添い、共に前進するパートナーとして伴走します。</span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="values-footer"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span><span class="s1">学びは、人と人のあいだに生まれる。</span>&lt;br&gt;</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span></span>だからこそ、共に考え、共に行動していきます。</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p3"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- <span class="s1">セクション</span>4<span class="s1">：サービスと実績</span> (bg-fa) --&gt;&lt;section class="services-section bg-fa"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2&gt;<span class="s1">サービス｜理念を、現場で形に</span>&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="about-text" style="text-align: center; margin-bottom: 3rem;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>Learning Bridge<span class="s1">では、次の</span>3<span class="s1">つの事業を柱に活動しています。</span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- <span class="s1">サービス</span>1 --&gt;&lt;div class="service-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="service-grid"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="service-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3&gt;<span class="s1">①</span> <span class="s1">授業準備・設計の伴走支援</span>&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="service-description"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span><span class="s1">教員一人ひとりの想いや授業テーマに合わせて、</span>&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span><span class="s1">共に学生の主体性を引き出す仕組みを構築いたします。</span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- <span class="s1">絵文字削除</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- <span class="s1">サービス</span>2 --&gt;&lt;div class="service-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="service-grid"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="service-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3&gt;<span class="s1">②</span> <span class="s1">探究学習・課外授業の企画運営支援</span>&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="service-description"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span><span class="s1">金融・キャリア・</span>AI<span class="s1">・社会課題など、実社会につながるテーマを扱い、</span>&lt;br&gt;</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                            </span></span>「問いを立て、考え、行動する力」を育む探究型学習を企画運営をいたします。</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                     </span>&lt;!-- <span class="s1">絵文字削除</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- <span class="s1">サービス</span>3 --&gt;&lt;div class="service-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="service-grid"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="service-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3&gt;<span class="s1">③</span> <span class="s1">教育ワークショップ・イベント企画</span>&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="service-description"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span><span class="s1">学生・教員・企業・自治体など、立場を超えて学び合う場を創出し、</span>&lt;br&gt;</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                            </span></span>教育と社会をつなぐ<span class="s2">"</span>共創の場<span class="s2">"</span>として、対話を生み出すイベントを開催いたします。</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                     </span>&lt;!-- <span class="s1">絵文字削除</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p3"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="achievement-box"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h4 class="achievement-title"&gt;<span class="s1">《活動実績（ハイライト）》</span>&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="achievement-text"&gt;</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span></span>これまでにも授業設計・課外授業・ワークショップなどを数多く実施。<span class="s2">&lt;br&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span></span>参加者アンケートでは、満足度（<span class="s2">5</span>段階評価）が平均<span class="s2">4.5</span>以上と高い評価をいただいています。<span class="s2">&lt;br&gt;</span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- <span class="s1">改行を削除して文章を接続</span> --&gt;</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span></span>「また探究学習を実施してほしい」「次回もぜひ参加したい」といった声も多く、継続的な学びの機会を求める声も増えてきております。</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- <span class="s1">活動実績の画像を新しいリンクに差し替え</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;img src="https://i.imgur.com/xTlUjpy.jpeg" alt="<span class="s1">活動実績を示す集合写真</span>" class="achievement-image"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- <span class="s1">アクションボタンを「サービス詳細」に変更し、サービスページへ遷移</span> --&gt;&lt;div class="section-button" style="margin-top: 3rem;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button class="cta-button" onclick="showPage('services')"&gt;<span class="s1">サービス詳細</span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p3"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- <span class="s1">セクション</span>5<span class="s1">：相談の流れ</span> (bg-f8) --&gt;&lt;section class="flow bg-f8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2&gt;<span class="s1">ご相談から実施・サポートまでの流れ</span>&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="flow-list"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flow-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="flow-title"&gt;1<span class="s1">．お問い合わせ</span>&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="flow-text"&gt;</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                        </span></span>まずは、お問い合わせフォームまたはメールにてご連絡ください。<span class="s2">&lt;br&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                        </span></span>目的やご相談内容を簡単にお伝えいただくだけでも構いません。</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flow-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="flow-title"&gt;2<span class="s1">．相談日設定</span>&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="flow-text"&gt;</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                        </span></span>担当スタッフより２営業日以内にご連絡し、まずはオンラインでの相談日を調整いたします。<span class="s2">&lt;br&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                        </span></span>なお、ご希望の曜日や時間帯にも柔軟に対応いたします。</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flow-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="flow-title"&gt;3<span class="s1">．初回相談</span>&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="flow-text"&gt;</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                        </span></span>現状の課題や目指す方向性を丁寧にヒアリングし、目的に応じて、支援内容やスケジュールのイメージをご説明いたします。</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flow-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="flow-title"&gt;4<span class="s1">．契約</span>&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="flow-text"&gt;</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                        </span></span>ご提案内容に納得いただいた上で、正式に契約を締結いたします。<span class="s2">&lt;br&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                        </span></span>契約内容や支援スコープについても明確にお伝えしますのでご安心ください。</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flow-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="flow-title"&gt;5<span class="s1">．サービス開始</span>&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="flow-text"&gt;</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                        </span></span>授業設計・探究学習・ワークショップなど、合意内容に基づき活度および支援を開始いたします。<span class="s2">&lt;br&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                        </span></span>進行中も定期的にフィードバックを行い、より良い形を共に模索していきます。</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="flow-footer"&gt;</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span></span>私たちは、一度きりの活動および支援ではなく、<span class="s2">&lt;br&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span>"</span>共創していくパートナー<span class="s2">"</span>として伴走していきます。</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p3"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- <span class="s1">セクション</span>6<span class="s1">：未来の教育をつくる仲間と共に</span> (bg-fa) - <span class="s1">新規追加</span> --&gt;&lt;section class="membership-section bg-fa"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2&gt;<span class="s1">未来の教育をつくる仲間と共に</span>&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="membership-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="membership-text" style="text-align: center; margin-bottom: 1.5rem;"&gt;</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span></span>私たちの活動は、多くの企業や団体の皆さまのご支援と共創によって支えられています。<span class="s2">&lt;br&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span></span>それぞれの想いや専門性がつながることで、「教育を社会とともに育てる」新しい形が生まれています。</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="membership-text" style="text-align: center; font-size: 1.25rem; font-weight: 600; color: #13538a; margin-bottom: 3rem;"&gt;</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>Learning Bridge</span>では、未来を担う若者の学びを共に支える賛助会員（共創パートナー）を大募集しています。</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="cta-buttons"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button class="cta-button" onclick="showPage('membership')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span><span class="s1">賛助会員（共創パートナー）募集</span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- <span class="s1">新しいパートナー一覧ページへ遷移</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button class="cta-button" onclick="showPage('partners')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span><span class="s1">会員・パートナー（一覧）</span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p3"><br></p>
+<p class="p3"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- <span class="s1">セクション</span>7<span class="s1">：お問い合わせ</span> (<span class="s1">背景色は維持</span>) --&gt;&lt;section class="contact-section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2&gt;<span class="s1">まずはお気軽にお問い合わせください</span>&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="contact-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="contact-text"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span><span class="s1">教育支援・ワークショップや講演依頼など、</span>&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span><span class="s1">どんな小さなご相談でもお気軽にご連絡ください。</span>&lt;br&gt;</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span></span>初回に限らず、相談は無料で承っております。</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- <span class="s1">賛助会員募集の呼びかけ文を削除</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="cta-buttons"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- CTA<span class="s1">ボタンのデザインを統一</span> --&gt;&lt;a class="cta-button" href="https://docs.google.com/forms/d/e/1FAIpQLSfT027WJZyBzb6FulIPU-Rkz6tsgTvjTdcpyZiWTMYDm5NxXQ/viewform?usp=dialog" target="_blank"&gt;<span class="s1">お問い合わせ</span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p3"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- <span class="s1">②会社概要ページ</span> --&gt;&lt;div class="page" id="company"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- <span class="s1">セクション</span>1<span class="s1">：ファーストビュー</span> --&gt;&lt;div class="company-hero"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h1&gt;<span class="s1">会社概要</span>&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;Learning Bridge<span class="s1">について</span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- <span class="s1">セクション</span>2<span class="s1">：理念</span> (bg-fa) --&gt;&lt;section class="philosophy-section bg-fa"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2&gt;<span class="s1">私たちの理念</span>&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="philosophy-box"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3 class="philosophy-title"&gt;Philosophy<span class="s1">（理念）</span>&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="philosophy-text"&gt;<span class="s1">学びを、人生の</span>"<span class="s1">羅針盤</span>"<span class="s1">に！！</span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- <span class="s1">セクション</span>3<span class="s1">：</span>Mission (bg-f8) --&gt;&lt;section class="philosophy-section bg-f8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">             </span>&lt;!-- h2<span class="s1">タイトルはセクション内で定義するため削除</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="philosophy-box"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3 class="philosophy-title"&gt;Mission<span class="s1">（使命）</span>&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="philosophy-text"&gt;<span class="s1">一人ひとりが共に学び合い</span>&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span><span class="s1">挑戦できる環境を創る</span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- <span class="s1">セクション</span>4<span class="s1">：</span>Vision (bg-fa) --&gt;&lt;section class="philosophy-section bg-fa"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">             </span>&lt;!-- h2<span class="s1">タイトルはセクション内で定義するため削除</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="philosophy-box"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3 class="philosophy-title"&gt;Vision<span class="s1">（目指す未来）</span>&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="philosophy-text"&gt;<span class="s1">学生が学ぶべき本質的な教育で</span>&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span><span class="s1">主体性を最大限まで引き出し</span>&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span><span class="s1">人生を動かす起点にする</span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- <span class="s1">セクション</span>5<span class="s1">：代表メッセージ</span> (bg-f8) --&gt;&lt;section class="message-section bg-f8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2&gt;<span class="s1">代表メッセージ</span>&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="message-grid"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="message-profile"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- <span class="s1">画像</span>URL<span class="s1">を反映</span> --&gt;&lt;div class="profile-image"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;img src="https://i.imgur.com/DKiIcFj.jpeg"<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                             </span>alt="<span class="s1">代表理事</span> <span class="s1">川村政輝の顔写真</span>"<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                             </span>onerror="this.src='https://placehold.co/200x200/cccccc/000000?text=Error';"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="profile-name"&gt;<span class="s1">代表理事</span>&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span><span class="s1">川村　政輝</span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="social-links"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;a href="https://x.com/2002_bourbon" target="_blank" class="social-link" title="X (Twitter)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;img src="https://i.imgur.com/fDFbewC.png" alt="X<span class="s1">アイコン</span>"&gt; &lt;!-- <span class="s1">画像</span>URL<span class="s1">を更新</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;a href="https://www.facebook.com/profile.php?id=61560536932574" target="_blank" class="social-link" title="Facebook"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;img src="https://i.imgur.com/UKdsI9v.jpeg" alt="Facebook<span class="s1">アイコン</span>"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;a href="https://note.com/2002_bourbon" target="_blank" class="social-link" title="note"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;img src="https://i.imgur.com/Ibmry9Z.png" alt="note<span class="s1">アイコン</span>"&gt; &lt;!-- <span class="s1">画像</span>URL<span class="s1">を更新</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="message-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="message-opening"&gt;<span class="s1">もし、今の教育がこのまま何も変わらなかったら</span>——<span class="s1">。</span>&lt;/p&gt; &lt;!-- <span class="s1">タイトルを修正</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="message-text"&gt;</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                        </span></span>これは、私自身が教育事業に取り組もうと思った原点です。</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="message-text"&gt;</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                        </span></span>高校サッカーの名門・静岡学園高校で青春を懸けてきた私は、高校<span class="s2">3</span>年の夏、最後の甲子園をかけた大会が中止となり、努力のすべてが報われない現実を目の当たりにしました。</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                        </span></span>そのとき痛感したのは、「挑戦できる環境こそが、人の可能性を育てる」ということでした。</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="message-text"&gt;</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                        </span></span>その後、京都産業大学・生命科学部に進学し、高校の理科教員を志して教職課程を履修。</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                        </span></span>学校インターンなどを通して教育現場に関わる中で、「学生の受け身な学び」と「教員の限界を超えた努力」という２つの現実に直面しました。</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                        </span></span>どちらも懸命でありながら、構造そのものが変わらなければ誰も報われない。</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>——<span class="s1">そう感じたのです。</span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="message-text"&gt;</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                        </span></span>このままでは、若者が未来を切り拓く力を失ってしまう。</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                        </span></span>だからこそ、学びの根本から「リビルド（再構築）」していきたい。</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                        </span></span>既存の仕組みを整えるのではなく、教育という<span class="s2">"</span>環境そのもの<span class="s2">"</span>を変えていく。</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="message-text"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span><span class="s1">学生が自ら問いを立て、考え、行動できるように。</span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span><span class="s1">教員が誇りをもって挑戦を支えられるように。</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                        </span></span>そして、学びが社会とつながり、人生の<span class="s2">"</span>羅針盤<span class="s2">"</span>となるように。</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="message-text"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span><span class="s1">学びが人を動かし、人が社会を変えていく</span>——<span class="s1">。</span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span><span class="s1">そんな未来を、皆さんと共に築きたい。</span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="message-text"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;strong&gt;<span class="s1">学生と教員、そして社会とつながる</span>"<span class="s1">共創の橋</span>"<span class="s1">、それが『</span>Learning Bridge<span class="s1">』です。</span>&lt;/strong&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="message-text"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;strong&gt;<span class="s1">共に、日本の教育に新しい風を吹かせましょう！！</span>&lt;/strong&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p3"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- <span class="s1">セクション</span>6<span class="s1">：会社情報</span> (bg-fa) --&gt;&lt;section class="company-info bg-fa"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2&gt;<span class="s1">会社情報</span>&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="info-table-container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;table class="info-table"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;th&gt;<span class="s1">会社名</span>&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;td&gt;<span class="s1">一般社団法人</span>Learning Bridge&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;th&gt;<span class="s1">代表理事</span>&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;td&gt;<span class="s1">川村</span> <span class="s1">政輝</span>&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- <span class="s1">項目を削除し、順序を変更</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;th&gt;<span class="s1">所在地</span>&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;td&gt;<span class="s1">京都府京都市</span>&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;th&gt;<span class="s1">設立</span>&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;td&gt;2025<span class="s1">年</span>12<span class="s1">月（予定）</span>&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- <span class="s1">項目を削除し、順序を変更</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;th&gt;<span class="s1">事業内容</span>&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span><span class="s1">教育支援・人材育成事業</span>&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span><span class="s1">・授業準備・設計の伴走支援</span>&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span><span class="s1">・課外授業・探究学習の企画運営</span>&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span><span class="s1">・ワークショップ・教育系イベント企画運営</span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/table&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p3"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- <span class="s1">③サービスページ</span> --&gt;&lt;div class="page" id="services"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="services-hero"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h1&gt;<span class="s1">サービス</span>&lt;/h1&gt;</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>&lt;p&gt;</span>学生の主体性育成と教員の働き方改革を両立する教育支援<span class="s2">&lt;/p&gt;</span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p3"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- S2: <span class="s1">サービス詳細</span> (bg-f8) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section class="bg-f8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- <span class="s1">サービス</span>1 --&gt;&lt;div class="service-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3 style="color: #0ea5e9; font-size: 2rem; margin-bottom: 0.5rem;"&gt;01<span class="s1">　授業準備・設計の伴走支援</span>&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="service-subtitle"&gt;<span class="s1">〜授業の</span>"<span class="s1">質</span>"<span class="s1">と</span>"<span class="s1">効率化</span>"<span class="s1">を両立する、現場密着型の支援〜</span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="service-description"&gt;</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span></span>主に高等学校・大学での授業準備・設計を対象に、教員と伴走しながら授業の設計・実践・振り返りまでを一体的に支援するサービスです。（小・中学校のご相談にも対応可能です。）<span class="s2">&lt;br&gt;&lt;br&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span></span>教育工学・認知心理学などの理論や文献を基盤に開発した独自メソッドを活用し、授業の目的設定から構成設計、振り返り・改善までを体系的にサポートします。<span class="s2">&lt;br&gt;&lt;br&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span></span>「主体的・対話的で深い学び」を実現するため、アクティブラーニングだけでなく、アクティブ・リコールやアイスブレイクなど、学生の思考・対話・行動を促す最新の教育手法の導入も支援します。<span class="s2">&lt;br&gt;&lt;br&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span></span>これにより、教員が一人で抱え込みがちな授業準備の心理的・時間的負担を軽減しながら、教育の質とワークライフバランスの両立を目指します。</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="service-features"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h4&gt;<span class="s1">特徴</span>&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;li&gt;PDCA<span class="s1">型支援：目的設定から授業後の振り返りまで一貫伴走</span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;li&gt;<span class="s1">理論的裏付け：教育工学・認知心理学などを基盤とした授業設計</span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;li&gt;<span class="s1">実践型メソッド：アクティブラーニングに加え、最新の教育手法を導入</span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;li&gt;<span class="s1">負担軽減：準備時間の最適化と心理的ストレスの削減に貢献</span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- <span class="s1">サービス</span>2 --&gt;&lt;div class="service-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3 style="color: #0ea5e9; font-size: 2rem; margin-bottom: 0.5rem;"&gt;02<span class="s1">　探究学習・課外授業の企画運営支援</span>&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="service-subtitle"&gt;<span class="s1">〜</span>"<span class="s1">問いを立て、解決する力</span>"<span class="s1">を育てる、社会とつながる学びの実装支援〜</span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="service-description"&gt;</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span></span>学校教育では扱いにくい「自己分析」「将来設計」「金融リテラシー」「生成<span class="s2">AI</span>活用」などを題材に、探究型学習プログラムを企画・運営するサービスです。<span class="s2">&lt;br&gt;&lt;br&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span></span>各校の教育目標・学年特性・地域性に合わせて内容をカスタマイズし、企画・設計段階から当日の運営までを包括的に支援し、授業準備・設計支援で活用する同一メソッドをもとに、学生が「考える」「対話する」「行動する」学びをデザインします。<span class="s2">&lt;br&gt;&lt;br&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span></span>また、必要に応じて、教員との協働に加え、外部講師・ファシリテーターとして現場支援も実施しながら、教員の業務負担を軽減しながら、探究的学びの実装を推進します。<span class="s2">&lt;br&gt;&lt;br&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span></span>これにより、学校現場における<span class="s2">"</span>本質的な学びの定着<span class="s2">"</span>を実現し、学生が自らの意志で未来を描く力の育成を目指します。</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="service-features"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h4&gt;<span class="s1">特徴</span>&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;li&gt;<span class="s1">テーマカスタマイズ：学校の教育方針・地域課題に応じた柔軟設計</span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;li&gt;<span class="s1">全工程支援：企画・設計・運営・振り返りまで包括的に支援</span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;li&gt;<span class="s1">実践重視：現場ファシリテーションによる学習効果の最大化</span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;li&gt;<span class="s1">共創モデル：学生・教員・地域・社会が一体となるプログラム設計</span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- <span class="s1">サービス</span>3 --&gt;&lt;div class="service-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3 style="color: #0ea5e9; font-size: 2rem; margin-bottom: 0.5rem;"&gt;03<span class="s1">　ワークショップ・教育系イベント企画運営</span>&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="service-subtitle"&gt;<span class="s1">〜学びの</span>"<span class="s1">交差点</span>"<span class="s1">を創る、教育</span>×<span class="s1">社会の共創プラットフォーム〜</span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="service-description"&gt;</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span></span>企業・自治体・教育機関などと連携し、教育や人材育成をテーマとした共創型ワークショップ・イベントの企画・運営するサービスです。<span class="s2">&lt;br&gt;&lt;br&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span></span>学校外において、学生と社会人、教員と企業、異なる立場の人々が対話し、共に課題に向き合う「学びの交差点」を創出し、講演や一方向の学びではなく、参加者全員が考え、語り、行動を起こす場をデザインします。<span class="s2">&lt;br&gt;&lt;br&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span></span>これにより、教育と社会が双方向に学び合い、地域や組織の枠を越えて<span class="s2">"</span>学びが循環する社会的ネットワーク<span class="s2">"</span>の構築の促進を目指します。</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="service-features"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h4&gt;<span class="s1">特徴</span>&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;li&gt;<span class="s1">共創型設計：学生・教員・企業・自治体が対等に関わる場づくり</span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;li&gt;<span class="s1">対話と行動の融合：講演＋ワークショップ＋アクション設計</span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;li&gt;<span class="s1">継続的ネットワーク：イベント後もつながるコミュニティ形成</span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;li&gt;<span class="s1">多様な開催形式：地域施設（対面）・オンラインまで柔軟対応</span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p3"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- S3: <span class="s1">参加学生からいただいた声</span> (bg-fa) - <span class="s1">新規追加</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section class="voice-section bg-fa"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2&gt;<span class="s1">参加学生からいただいた声</span>&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="voice-list" style="max-width: 900px; margin: 0 auto;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Y<span class="s1">・</span>S<span class="s1">さん</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="voice-box"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="voice-content"&gt;</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                        </span></span>今回、初めてこういったワークショップに参加してみて、自分自身の将来に対する向き合い方に最も変化があったと感じています。今まではマイナス思考で自分自身の将来と向き合っていました。ですが、私は、現在様々な学生団体に所属しており、いつも着いてきてくれるメンバーのことを考え、将来のビジョンやそのための行動指針などを今回のようなワークショップを通じて、ポジティブに捉えられるようになりました。また、起業した方のお話を直接聞くことによって起業やその周辺の考え方にもまた<span class="s2">1</span>つ変化があったと思います。</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="voice-name"&gt;Y<span class="s1">・</span>S<span class="s1">さん</span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- M<span class="s1">・</span>Y<span class="s1">さん</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="voice-box"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="voice-content"&gt;</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                        </span></span>今までワークショップに参加したことがほとんどなく、初めて会う人たちと議論することに不安を感じていました。しかし、本題に入る前に特徴的なアイスブレイクがあり、気軽に楽しむことができたおかげで自然と会話が生まれ、その後の議論では緊張も和らぎ、活発に意見交換ができました。近年、主体的な行動が求められる一方で、自ら意見を発することに苦手意識を持つ若者が増えているように感じますので、そういった意味でもこのような社会課題について考えるワークショップは、自分の考えを表現するきっかけを得られる貴重な機会だと思いました。</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="voice-name"&gt;M<span class="s1">・</span>Y<span class="s1">さん</span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p3"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- S4: <span class="s1">お問い合わせ</span> (bg-f8) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section class="bg-f8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- <span class="s1">お問い合わせ</span> (<span class="s1">グラデーション背景を適用</span>) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div style="background: linear-gradient(135deg, #0ea5e9 0%, #3b82f6 100%); color: white; padding: 3rem; border-radius: 20px; text-align: center; margin-top: 4rem;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3 style="font-size: 2rem; margin-bottom: 1.5rem; color: white;"&gt;<span class="s1">お問い合わせ</span>&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p style="font-size: 1.2rem; line-height: 2; margin-bottom: 2rem; color: #e0f2fe;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span><span class="s1">教育支援・ワークショップや講演依頼など、</span>&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span><span class="s1">どんな小さなご相談でもお気軽にご連絡ください。</span>&lt;br&gt;</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span></span>初回に限らず、相談は無料で承っております。</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;a class="cta-button" href="https://docs.google.com/forms/d/e/1FAIpQLSfT027WJZyBzb6FulIPU-Rkz6tsgTvjTdcpyZiWTMYDm5NxXQ/viewform?usp=dialog" target="_blank" style="color: #0ea5e9;"&gt;<span class="s1">お問い合わせ</span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p3"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- <span class="s1">④会員募集ページ</span> --&gt;&lt;div class="page" id="membership"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- <span class="s1">セクション</span>1<span class="s1">：ファーストビュー</span> (<span class="s1">タイトル構成を修正</span>) --&gt;&lt;div class="company-hero"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h1&gt;<span class="s1">賛助会員（共創パートナー）募集</span>&lt;/h1&gt; &lt;!-- <span class="s1">修正</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;<span class="s1">教育を</span>"<span class="s1">支援</span>"<span class="s1">から</span>"<span class="s1">共創</span>"<span class="s1">へ</span>&lt;/p&gt; &lt;!-- <span class="s1">修正</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p3"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- <span class="s1">パートナー一覧への誘導ボタンを挿入</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="section-button" style="padding-top: 2rem; padding-bottom: 0;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button class="cta-button" onclick="showPage('partners')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span><span class="s1">会員・パートナー（一覧）を見る</span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p3"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- S2: <span class="s1">統合セクション</span> (bg-fa) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section class="membership-section bg-fa"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="membership-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2&gt;<span class="s1">共に、教育の未来を創りませんか？</span>&lt;/h2&gt; &lt;!-- <span class="s1">タイトル修正</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="membership-text"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span><span class="s1">教育とは、知識を教えることではありません。</span>&lt;br&gt;</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span></span>それは、人が<span class="s2">“</span>自らの生き方<span class="s2">”</span>を見つけるための<span class="s2">“</span>環境づくり<span class="s2">“</span>だと、私たちは考えています。</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="membership-text"&gt;</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span></span>今、教育はもはや<span class="s2">“</span>学校の中だけ<span class="s2">“</span>で完結するものではなくなりました。<span class="s2">&lt;br&gt;</span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span><span class="s1">生成</span>AI<span class="s1">の進化、人口減少、働き方の多様化など</span>...&lt;br&gt;</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span></span>社会が大きく変化する今だからこそ、教育もまた、社会と共に進化していく必要があります。</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="membership-text"&gt;</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span></span>私たちはこれまでに、授業設計支援・探究学習・ワークショップなどを通じて、「学びが変われば、人は変わる」という確信を得てきました。<span class="s2">&lt;br&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span></span>しかし、その一方で、現場ではいまだ、教員の多忙化や予算不足など、<span class="s2">“</span>変わりたくても変われない<span class="s2">”</span>構造的な課題が根強く残っています。</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="membership-text"&gt;</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span></span>だからこそ、教育と社会をつなぐ新しい仕組みが必要なのです。<span class="s2">&lt;br&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span></span>私たちは、そんな<span class="s2">“</span>学びの橋<span class="s2">”</span>を架ける存在として、企業や団体の皆さまと共に、未来の教育、そして未来を担う若者たちの成長を「共創」していくべく、この賛助会員制度（共創パートナー募集）を立ち上げました。</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="membership-text" style="font-size: 1.25rem; font-weight: 600; text-align: center; color: #13538a; margin-top: 3rem; margin-bottom: 0;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span><span class="s1">教育を支えることは、未来を育てること。</span>&lt;br&gt;</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span></span>その第一歩を、私たちと共に踏み出しませんか？</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p3"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- S3: <span class="s1">未来への投資</span> (bg-f8) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section class="membership-section bg-f8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="membership-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2&gt;<span class="s1">共に育てる未来への投資</span>&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="membership-text" style="text-align: center; font-size: 1.25rem; color: #0ea5e9; font-weight: 600; margin-bottom: 2rem;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>Learning Bridge<span class="s1">の賛助会員制度は、</span>&lt;br&gt;</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span></span>単なる寄付ではなく、「教育<span class="s2">×</span>企業<span class="s2">×</span>社会」の価値を共に創るためのパートナーシップです。</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- <span class="s1">画像挿入</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;img src="https://i.imgur.com/VRar3HC.png" alt="<span class="s1">教育の共創構成図</span>" class="achievement-image" style="max-width: 100%; height: auto; border-radius: 15px; margin: 0 auto 10px; display: block;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p style="text-align: center; font-size: 0.9rem; color: #64748b; margin-bottom: 3rem; line-height: 1.5;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span><span class="s1">（</span> Learning Bridge<span class="s1">が描く未来の教育の共創構成図</span> <span class="s1">）</span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/p&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="benefit-list"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="benefit-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h4 class="benefit-title"&gt;<span class="s1">①</span> <span class="s1">社会的価値（</span>CSV<span class="s1">・</span>CSR<span class="s1">）の創出</span>&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="benefit-text"&gt;</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                            </span></span>若者の主体性を育む教育への参画は、社会的価値の共創につながります。<span class="s2">&lt;br&gt;</span></p>
+<p class="p1"><span class="Apple-converted-space">                            </span><span class="s1">教育を支えることは、未来の人材・文化・市場を育てること。</span>&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>"<span class="s1">持続可能な社会づくりに貢献する企業</span>"<span class="s1">としての信頼を高めます。</span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="benefit-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h4 class="benefit-title"&gt;<span class="s1">②</span> <span class="s1">ブランド価値・信頼の向上</span>&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="benefit-text"&gt;</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                            </span></span>教育支援に取り組む企業は、社会的信用度の高いブランドとして認知されやすく、<span class="s2">&lt;br&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                            </span></span>採用・広報・ブランディングのあらゆる場面でプラスの影響をもたらします。<span class="s2">&lt;br&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                            </span></span>「人を育てる企業」という姿勢は、教育関係者・学生・保護者にも確実に届きます。</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="benefit-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h4 class="benefit-title"&gt;<span class="s1">③</span> <span class="s1">社員研修・人材育成の拡充</span>&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="benefit-text"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span><span class="s1">私たちが支援する</span>"<span class="s1">主体的な学び</span>"<span class="s1">の設計思想は、</span>&lt;br&gt;</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                            </span></span>企業の社員研修・リーダー育成・チームビルディングにも応用可能です。<span class="s2">&lt;br&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                            </span></span>教育現場で蓄積した理論と実践を、御社の人材育成に還元できます。</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="benefit-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h4 class="benefit-title"&gt;<span class="s1">④</span> <span class="s1">学生との接点創出・採用ブランディング</span>&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="benefit-text"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span><span class="s1">全国の高校・大学と連携する</span>Learning Bridge<span class="s1">のネットワークを通じて、</span>&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span><span class="s1">御社の理念や事業に共感する学生との出会いが生まれます。</span>&lt;br&gt;</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                            </span></span>「採用の前に、共に学ぶ」関係性の中で、真に共感でつながる採用を実現します。</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="benefit-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h4 class="benefit-title"&gt;<span class="s1">⑤</span> <span class="s1">共創による新たな価値創出</span>&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="benefit-text"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span><span class="s1">教育をテーマにした共同イベント・カリキュラム開発など、</span>&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span><span class="s1">企業と学生が共に挑戦できる新しいプロジェクトを共創できます。</span>&lt;br&gt;</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                            </span></span>社会課題の解決や新規事業の構想など、<span class="s2">"</span>教育を通じた共創<span class="s2">"</span>がここにあります。</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p3"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- S4: <span class="s1">会員費</span> (<span class="s1">タイトル変更と文章修正</span>) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section class="membership-section bg-fa"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="membership-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2&gt;<span class="s1">会員費</span>&lt;/h2&gt; &lt;!-- <span class="s1">タイトル修正</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div style="background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); margin-bottom: 4rem;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 style="font-size: 1.6rem; color: #13538a; margin-bottom: 1.5rem; border-bottom: 2px solid #e0f2fe; padding-bottom: 0.5rem; font-weight: bold;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span><span class="s1">年会費</span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p style="font-size: 2.2rem; font-weight: bold; color: #0ea5e9; margin-bottom: 1rem; line-height: 1.5;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>50<span class="s1">万円〜（</span>1<span class="s1">年単位）</span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;ul style="list-style: none; padding: 0; font-size: 1.05rem; color: #475569; line-height: 2;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;li style="margin-bottom: 0.5rem;"&gt;※<span class="s1">入会金は不要です。</span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;li style="margin-bottom: 0.5rem;"&gt;※<span class="s1">年会費は月額での分割払いにも対応しております。</span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;li style="margin-bottom: 0.5rem;"&gt;※<span class="s1">会員期間は入会日から</span>1<span class="s1">年間。以降は自動更新となりますが、退会をご希望の場合は更新月の前月までにお申し出ください。</span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="membership-text" style="margin-top: 2rem;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;strong style="color: #13538a; font-weight: 800;"&gt;<span class="s1">なお、いただいた会費は、教育支援にかかる費用および学生の人材育成・活動支援などに充て、すべて</span>“<span class="s1">未来の学び</span>”<span class="s1">のために活用いたします。</span>&lt;/strong&gt; &lt;!-- <span class="s1">改行削除と強調</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2&gt;<span class="s1">会員特典</span>&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="membership-text" style="text-align: center; margin-bottom: 3rem;"&gt;</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span></span>賛助会員（共創パートナー）としてご参画いただける企業・団体の皆さまには、教育支援・人材育成・広報連携など、私たちの活動に合わせた特典をご用意しております。</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/p&gt;</p>
+<p class="p3"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="benefit-list"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h4 style="font-size: 1.4rem; color: #13538a; margin-bottom: 1.5rem; border-bottom: 2px solid #e0f2fe; padding-bottom: 0.5rem; font-weight: bold;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span><span class="s1">主な特典内容（例）</span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="benefit-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h4 class="benefit-title"&gt;<span class="s1">教育コンテンツ共同開発</span>&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="benefit-text"&gt;</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                            </span></span>御社の理念や専門分野を活かしたワークショップ・探究プログラム・教材の共同開発が可能です。</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="benefit-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h4 class="benefit-title"&gt;<span class="s1">イベント特典</span>&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="benefit-text"&gt;</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                            </span></span>共催ワークショップ・講演会・セミナーなどへの優先参加や、協賛イベントでの登壇・展示機会をご提供します。</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="benefit-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h4 class="benefit-title"&gt;<span class="s1">広報・</span>PR<span class="s1">特典</span>&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="benefit-text"&gt;</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                            </span></span>公式サイト・<span class="s2">SNS</span>・パンフレット等に企業ロゴや取り組み内容を掲載し、社会貢献・教育支援活動を広く発信します。</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="benefit-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h4 class="benefit-title"&gt;<span class="s1">人材育成特典</span>&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="benefit-text"&gt;</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                            </span></span>独自メソッドを活用した社員研修・リーダー育成・チームビルディング・教育コンサルティングを実施します。</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p3"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="membership-text" style="margin-top: 2rem; font-size: 0.95rem; line-height: 1.8; color: #64748b;"&gt;</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>※</span>特典の内容および適用範囲は、会員区分によって異なります。<span class="s2">&lt;br&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>※</span>会員区分によっては、御社のニーズに合わせた特典内容のカスタマイズも可能です。</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p3"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- S5: <span class="s1">ご参画までの流れ</span> (bg-f8) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section class="membership-section bg-f8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="membership-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2&gt;<span class="s1">ご参画までの流れ</span>&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="membership-text"&gt;</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span></span>企業・団体の皆さまが安心してご参画いただけるよう、まずは<span class="s2">1</span>度、ラフにお話しすることから始めていければと思います。</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="section-button" style="margin-bottom: 3rem;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;a class="cta-button" href="https://docs.google.com/forms/d/e/1FAIpQLScfNGLFewn0iyE-Xke0NeKSEvIWnty8kVok6wsgJvjKoFr_7Q/viewform?usp=dialog" target="_blank"&gt;<span class="s1">参画申込フォーム</span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="membership-text"&gt;</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span></span>御社の想いや事業内容との接点を共に探りながら、どのような形で共創できるかを丁寧に考えていきます。</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span></span>その後、内容にご納得いただけましたら、契約締結後、正式に賛助会員（共創パートナー）としてご参画いただけます。</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p3"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- S6: <span class="s1">最後に</span> <span class="s1">セクションを削除</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p3"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- <span class="s1">⑤お知らせページ</span> --&gt;&lt;div class="page" id="news"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="news-hero"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h1&gt;<span class="s1">お知らせ</span>&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;<span class="s1">最新情報・活動報告をお届けします</span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- <span class="s1">セクション</span>2<span class="s1">：お知らせリスト</span> (bg-fa) --&gt;&lt;section class="bg-fa"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2&gt;<span class="s1">最新情報</span>&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="news-list"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="news-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="news-date"&gt;2025<span class="s1">年</span>10<span class="s1">月</span>21<span class="s1">日</span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="news-category"&gt;<span class="s1">重要</span>&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="news-title"&gt;<span class="s1">一般社団法人</span>Learning Bridge <span class="s1">設立準備開始のお知らせ</span>&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="news-excerpt"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>2025<span class="s1">年</span>12<span class="s1">月上旬に、一般社団法人</span>Learning Bridge<span class="s1">の設立を目指し、準備を進めております。</span>&lt;br&gt;</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                        </span></span>学生の主体性育成と教員の働き方改革を両立する教育支援事業を展開してまいります。</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>&lt;!-- <span class="s1">必要に応じてお知らせアイテムを追加</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p3"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- <span class="s1">⑥会員・パートナー（一覧）ページ</span> --&gt;&lt;div class="page" id="partners"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- <span class="s1">セクション</span>1<span class="s1">：ファーストビュー</span> --&gt;&lt;div class="partners-hero"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h1&gt;<span class="s1">会員・パートナー（一覧）</span>&lt;/h1&gt;</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>&lt;p&gt;</span>賛助会員および連携・協力いただいているパートナーの紹介<span class="s2">&lt;/p&gt;</span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p3"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- <span class="s1">セクション</span>2<span class="s1">：賛助会員（企業・団体）</span> (bg-fa) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section class="bg-fa"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2&gt;<span class="s1">会員（企業・団体）</span>&lt;/h2&gt; &lt;!-- <span class="s1">修正</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="membership-content" style="text-align: center;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="membership-text" style="text-align: center; margin-bottom: 3rem;"&gt;</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span></span>私たちの理念に共感し、賛助会員として参画いただいている企業・団体の皆さまです。<span class="s2"> &lt;!-- </span>修正<span class="s2"> --&gt;</span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- <span class="s1">説明文を削除し、</span>COMING SOON<span class="s1">のみに</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3 style="font-size: 3rem; color: #0ea5e9; margin-top: 3rem; font-weight: 800;"&gt;COMING SOON&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- <span class="s1">将来のロゴ掲載のためのコメントを残す</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!--<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="partner-grid"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="partner-card"&gt;<span class="s1">ロゴ掲載予定</span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span><span class="s1">（ここにロゴを掲載し、媒体に合わせて</span>1<span class="s1">行のカード数を統一します。</span>PC:4, iPad:4, Mobile:2 <span class="s1">など）</span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>--&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p3"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- <span class="s1">セクション</span>3<span class="s1">：連携・協力パートナー</span> (bg-f8) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section class="bg-f8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2&gt;<span class="s1">連携・協力パートナー</span>&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="membership-content partner-list-container" style="text-align: center;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="membership-text" style="text-align: center; margin-bottom: 1.5rem;"&gt;</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span></span>私たちの活動にご協力・ご後援いただいている、行政・教育機関・企業・<span class="s2">NPO</span>などの皆さまです。</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- <span class="s1">分類ごとの</span> COMING SOON <span class="s1">表示に修正</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="partner-list-placeholder" style="max-width: 600px; margin: 0 auto; text-align: center;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="partner-category"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3&gt;<span class="s1">行政</span>&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p style="font-size: 1.5rem; color: #0ea5e9; font-weight: bold;"&gt;COMING SOON&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="partner-category"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3&gt;<span class="s1">教育機関</span>&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p style="font-size: 1.5rem; color: #0ea5e9; font-weight: bold;"&gt;COMING SOON&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="partner-category"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3&gt;NPO<span class="s1">・団体</span>&lt;/h3&gt; &lt;!-- <span class="s1">修正</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p style="font-size: 1.5rem; color: #0ea5e9; font-weight: bold;"&gt;COMING SOON&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="partner-category"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3&gt;<span class="s1">企業</span>&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p style="font-size: 1.5rem; color: #0ea5e9; font-weight: bold;"&gt;COMING SOON&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!--<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3 style="font-size: 3rem; color: #0ea5e9; margin-top: 3rem; font-weight: 800;"&gt;COMING SOON&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>--&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- <span class="s1">将来の分類ごとの掲載箇所（コメントアウト）</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!--<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="partner-category"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3&gt;<span class="s1">行政</span>&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="partner-grid"&gt;...&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>--&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p3"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- <span class="s1">フッター</span> --&gt;&lt;footer&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="footer-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="footer-about"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3&gt;Learning Bridge&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p style="margin-top: 1rem; line-height: 1.8; color: #e0f2fe;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span><span class="s1">学びを、人生の</span>"<span class="s1">羅針盤</span>"<span class="s1">に！！</span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p style="margin-top: 1.5rem; color: #cbd5e1; font-size: 0.9rem;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span><span class="s1">現在、『一般社団法人』設立準備中</span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="footer-links"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h4&gt;<span class="s1">ページ</span>&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;&lt;a onclick="showPage('company')"&gt;<span class="s1">会社概要</span>&lt;/a&gt;&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;&lt;a onclick="showPage('services')"&gt;<span class="s1">サービス</span>&lt;/a&gt;&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;&lt;a onclick="showPage('membership')"&gt;<span class="s1">賛助会員募集</span>&lt;/a&gt;&lt;/li&gt; &lt;!-- <span class="s1">変更</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;&lt;a onclick="showPage('news')"&gt;<span class="s1">お知らせ</span>&lt;/a&gt;&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="footer-links"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h4&gt;<span class="s1">お問い合わせ</span>&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- <span class="s1">お問い合わせボタンに変更し、中央揃えを適用</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li style="display: flex; justify-content: center; padding: 0;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                         </span>&lt;a class="cta-button" href="https://docs.google.com/forms/d/e/1FAIpQLSfT027WJZyBzb6FulIPU-Rkz6tsgTvjTdcpyZiWTMYDm5NxXQ/viewform?usp=dialog" target="_blank" style="padding: 0.8rem 1.5rem; font-size: 0.9rem; border-color: white; color: white; background: transparent; text-align: center;"&gt;<span class="s1">お問い合わせ</span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- <span class="s1">メールアドレスの表示形式を変更</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li style="color: #e0f2fe; margin-top: 1rem; padding-top: 0;"&gt;Email&lt;br&gt;info@learning-b.com&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="footer-bottom"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;&amp;copy; 2025 Learning Bridge. All Rights Reserved.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/footer&gt;</p>
+<p class="p3"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- JavaScript for Navigation and UI --&gt;&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>// <span class="s1">ページ切り替え</span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function showPage(pageId) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const pages = document.querySelectorAll('.page');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>pages.forEach(page =&gt; page.classList.remove('active'));</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById(pageId).classList.add('active');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>window.scrollTo({ top: 0, behavior: 'smooth' }); // <span class="s1">ページトップへスクロール</span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p3"><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>// </span>ハンバーガーメニューの開閉</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function toggleMenu() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const hamburger = document.querySelector('.hamburger');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const sideMenu = document.querySelector('.side-menu');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const overlay = document.querySelector('.overlay');</p>
+<p class="p3"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>hamburger.classList.toggle('active');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>sideMenu.classList.toggle('active');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>overlay.classList.toggle('active');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p3"><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>// </span>スクロール時のヘッダー背景変更<span class="s2"> (</span>半透明化<span class="s2">)</span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>window.addEventListener('scroll', function() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const header = document.querySelector('header');</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>// </span>スクロール時の背景色とブラー効果を調整</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (window.scrollY &gt; 100) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>header.style.background = 'rgba(27, 104, 149, 0.95)'; // <span class="s1">新しい色コードに合わせて変更</span> (#1b6895 <span class="s1">の</span>RGBA)</p>
+<p class="p1"><span class="Apple-converted-space">                </span>header.style.backdropFilter = 'blur(5px)';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>header.style.background = '#1b6895'; // <span class="s1">新しい色コードに合わせて変更</span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>header.style.backdropFilter = 'none';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p3"><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>// </span>初期表示時にトップページを表示</p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.addEventListener('DOMContentLoaded', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>showPage('home');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
