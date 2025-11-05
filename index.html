@@ -11,7 +11,7 @@
             box-sizing: border-box;
         }
         body {
-            /* フォント設定を修正（UDデジタル教科書体は一般的なブラウザでは表示されないため、フォールバックを調整） */
+            /* フォント設定を維持 */
             font-family: 'Hiragino Maru Gothic Pro', 'ヒラギノ丸ゴ Pro', 'Yu Gothic UI', 'メイリオ', 'Meiryo', sans-serif;
             line-height: 1.9;
             color: #333;
@@ -42,7 +42,7 @@
         .logo-image {
             height: 40px; /* ロゴの高さ調整 */
             cursor: pointer;
-            vertical-align: middle; /* 画像と他の要素のベースラインを合わせる */
+            vertical-align: middle;
         }
         /* ハンバーガーメニュー */
         .hamburger {
@@ -104,7 +104,6 @@
         .side-menu.active li:nth-child(2) { transition-delay: 0.2s; }
         .side-menu.active li:nth-child(3) { transition-delay: 0.3s; }
         .side-menu.active li:nth-child(4) { transition-delay: 0.4s; }
-        /* .side-menu.active li:nth-child(5) { transition-delay: 0.5s; } */ /* トップページ削除のため不要に */
         .side-menu a {
             color: white;
             text-decoration: none;
@@ -175,9 +174,9 @@
             margin-bottom: 2rem;
             animation: fadeInUp 1s;
             line-height: 1.4;
-            /* H1をレスポンシブに調整 */
+            /* PCでは固定値で一行表示を維持 */
             font-size: clamp(2rem, 5vw, 3.8rem);
-            white-space: nowrap; /* 強制的に一行表示 */
+            white-space: nowrap; 
         }
         .hero .subtitle {
             font-size: 1.4rem;
@@ -235,6 +234,9 @@
             position: relative;
             padding-bottom: 1rem;
             line-height: 1.5;
+            /* PC/タブレットで一行を維持 */
+            white-space: nowrap; 
+            font-size: clamp(1.8rem, 4vw, 2.8rem); /* PC/タブレットでのフォントサイズの柔軟性を確保 */
         }
         h2::after {
             content: '';
@@ -812,7 +814,6 @@
         .news-date {
             font-size: 0.9rem;
             color: #64748b;
-            margin-bottom: 0.5rem;
             display: inline-block;
             padding-right: 1rem;
         }
@@ -821,7 +822,7 @@
             font-weight: bold;
             color: white;
             /* デフォルトのカテゴリ背景色。インラインで上書き可能。 */
-            background: #0ea5e9; 
+            background: #0ea5e9; 
             padding: 0.2rem 0.6rem;
             border-radius: 5px;
             margin-bottom: 0.5rem;
@@ -893,8 +894,13 @@
             .hero {
                 padding: 100px 1.5rem 80px;
             }
+            /* 修正1: ヒーローH1を一行に収まるように最小フォントサイズを調整 */
             .hero h1 {
-                font-size: clamp(1.5rem, 5vw, 2.2rem); /* スマホでの最小サイズを調整 */
+                /* 最小値をさらに下げ、一行を保証 */
+                font-size: clamp(1.3rem, 5vw, 2.2rem); 
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
             .hero .subtitle {
                 font-size: 1.1rem;
@@ -906,12 +912,28 @@
                 padding: 1rem 2rem;
                 font-size: 1rem;
             }
+            /* 修正2: H2セクションタイトルを一行に収まるようにフォントサイズを調整 */
             h2 {
-                font-size: 1.8rem;
+                /* 最小1.4rem (約22.4px)に設定し、一行を保証 */
+                font-size: clamp(1.4rem, 4.5vw, 1.8rem); 
+                white-space: nowrap; 
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
             section {
                 padding: 3rem 1.5rem;
             }
+            /* 修正3: 本文テキストのフォントサイズを統一・縮小 */
+            .about-text, 
+            .service-description,
+            .membership-text,
+            .message-text,
+            .flow-text,
+            .value-text {
+                font-size: 1rem; /* 1.05remや1.15remから1rem (16px) に統一・縮小 */
+                line-height: 1.7; /* 行間も少し詰める */
+            }
+            
             .footer-content {
                 grid-template-columns: 1fr;
                 gap: 2rem;
@@ -956,13 +978,24 @@
             .service-grid {
                 grid-template-columns: 1fr;
             }
-            /* .service-icon { 絵文字削除のため不要に
-                font-size: 5rem;
-                margin-top: 1rem;
-            } */
+            
+            /* 修正3: 代表メッセージの順序変更と画像サイズ調整 */
             .message-grid {
                 grid-template-columns: 1fr;
             }
+            .message-profile {
+                order: 1; /* 修正: 代表紹介をメッセージ本文の上に移動 */
+            }
+            .message-content {
+                order: 2; /* 修正: メッセージ本文を下に移動 */
+            }
+            /* 顔写真のサイズを少し大きくする */
+            .profile-image {
+                width: 220px; /* 200pxから220pxに拡大 */
+                height: 220px; /* 200pxから220pxに拡大 */
+                margin: 0 auto 1.5rem; /* 中央寄せとマージンを維持 */
+            }
+            
             .flow-item {
                 padding-left: 2rem;
                 padding-top: 4rem;
@@ -987,14 +1020,14 @@
             .message-text {
                 font-size: 1.05rem;
             }
-            .message-profile {
-                order: 2; /* スマホでメッセージが先に表示されるように調整 */
+            
+            /* 修正1: フッターの「ページ」項目のリンクを中央揃えに */
+            .footer-links ul li {
+                text-align: center; /* ページリストの全項目を中央揃えに */
             }
-            .message-content {
-                order: 1;
-            }
+            
             .footer-links li:first-child { /* お問い合わせボタンのli要素 */
-                display: block; /* 中央揃えのためdisplayをリセット */
+                display: block; 
                 text-align: center;
             }
             .footer-links li:last-child { /* メールアドレスのli要素 */
@@ -1002,6 +1035,15 @@
             }
             .partner-grid {
                 grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            }
+            
+            /* --- 追加修正点 --- */
+            /* 1. フッターの著作権表示を一行にする */
+            .footer-bottom p {
+                /* 1行で収まらない場合に省略記号を表示 */
+                white-space: nowrap; 
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
         }
     </style>
@@ -1116,7 +1158,7 @@
             <div class="service-item">
                 <div class="service-grid">
                     <div class="service-content">
-                        <h3>② 探究学習・課外授業の企画運営支援</h3>
+                        <h3>② 探究学習・課外授業の企画運営支援 </h3>
                         <p class="service-description">
                             金融・キャリア・AI・社会課題など、実社会につながるテーマを扱い、<br>
                             「問いを立て、考え、行動する力」を育む探究型学習を企画運営をいたします。
@@ -1245,7 +1287,7 @@
         </section>
         <section class="philosophy-section bg-f8">
             <div class="philosophy-box">
-                <h3 class="philosophy-title">Mission（使命）</h3>
+                <h3 class="philosophy-title">Mission（使命） </h3>
                 <p class="philosophy-text">一人ひとりが共に学び合い<br>挑戦できる環境を創る</p>
             </div>
         </section>
@@ -1260,9 +1302,9 @@
             <div class="message-grid">
                 <div class="message-profile">
                     <div class="profile-image">
-                        <img src="https://i.imgur.com/DKiIcFj.jpeg" 
-                            alt="代表理事 川村政輝の顔写真" 
-                            onerror="this.src='https://placehold.co/200x200/cccccc/000000?text=Error';">
+                        <img src="https://i.imgur.com/DKiIcFj.jpeg" 
+                            alt="代表理事 川村政輝の顔写真" 
+                            onerror="this.src='https://placehold.co/220x220/cccccc/000000?text=Error';">
                     </div>
                     <div class="profile-name">代表理事<br>川村　政輝</div>
                     <div class="social-links">
@@ -1377,7 +1419,7 @@
                 </div>
             </div>
             <div class="service-item">
-                <h3 style="color: #0ea5e9; font-size: 2rem; margin-bottom: 0.5rem;">02　探究学習・課外授業の企画運営支援</h3>
+                <h3 style="color: #0ea5e9; font-size: 2rem; margin-bottom: 0.5rem;">02　探究学習・課外授業の企画運営支援  </h3>
                 <p class="service-subtitle">〜"問いを立て、解決する力"を育てる、社会とつながる学びの実装支援〜</p>
                 <p class="service-description">
                     学校教育では扱いにくい「自己分析」「将来設計」「金融リテラシー」「生成AI活用」などを題材に、探究型学習プログラムを企画・運営するサービスです。<br><br>
@@ -1422,13 +1464,13 @@
                     <p class="voice-content">
                         今回、初めてこういったワークショップに参加してみて、自分自身の将来に対する向き合い方に最も変化があったと感じています。今まではマイナス思考で自分自身の将来と向き合っていました。ですが、私は、現在様々な学生団体に所属しており、いつも着いてきてくれるメンバーのことを考え、将来のビジョンやそのための行動指針などを今回のようなワークショップを通じて、ポジティブに捉えられるようになりました。また、起業した方のお話を直接聞くことによって起業やその周辺の考え方にもまた1つ変化があったと思います。
                     </p>
-                    <p class="voice-name">Y・Sさん</p>
+                    <p class="voice-name">Y・Sさん（大学1年生）</p>
                 </div>
                 <div class="voice-box">
                     <p class="voice-content">
                         今までワークショップに参加したことがほとんどなく、初めて会う人たちと議論することに不安を感じていました。しかし、本題に入る前に特徴的なアイスブレイクがあり、気軽に楽しむことができたおかげで自然と会話が生まれ、その後の議論では緊張も和らぎ、活発に意見交換ができました。近年、主体的な行動が求められる一方で、自ら意見を発することに苦手意識を持つ若者が増えているように感じますので、そういった意味でもこのような社会課題について考えるワークショップは、自分の考えを表現するきっかけを得られる貴重な機会だと思いました。
                     </p>
-                    <p class="voice-name">M・Yさん</p>
+                    <p class="voice-name">M・Yさん（大学4年生）</p>
                 </div>
             </div>
         </section>
@@ -1676,7 +1718,8 @@
         <section class="membership-section bg-fa">
             <h2>連携・協力パートナー</h2>
             <div class="partner-section-content">
-                <p class="membership-text" style="text-align: left; margin-bottom: 3rem;">
+                <!-- 修正2: 文章を中央揃えに変更 -->
+                <p class="membership-text" style="text-align: center; margin-bottom: 3rem;">
                     私たちの活動にご協力・ご後援いただいている、行政・教育機関・企業・NPOなどの皆さまです。
                 </p>
 
@@ -1697,7 +1740,7 @@
                 <div class="partner-category">
                     <h3 style="color: #13538a; font-size: 1.8rem;">NPO・団体</h3>
                     <div class="partner-list" style="text-align: center;">
-                        <h3 style="font-size: 2.5rem; color: #0ea5e9; font-weight: 800; margin-top: 1rem;">COMING SOON</h3>
+                        <h3 style="font-size: 2.5rem; color: #0ea5e9; font-weight: 800; margin-top: 1rem;">COMING SOON </h3>
                     </div>
                 </div>
 
